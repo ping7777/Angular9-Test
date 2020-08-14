@@ -7,14 +7,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  users: any;
+  id: any;
 
-  users : any;
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(){
-    let resp = this.http.get("http://jsonplaceholder.typicode.com/users");
-    resp.subscribe((data)=>this.users=data);
-    resp.subscribe((data)=>console.log(data));
+  ngOnInit() {
+    this.users = []; 
+    this.http.get('https://reqres.in/api/users').subscribe(res => {
+      this.users = res["data"];
+    });
   }
-
+  
+  getData(id){
+    return this.http.get('https://reqres.in/api/users/'+id);
+  } 
 }

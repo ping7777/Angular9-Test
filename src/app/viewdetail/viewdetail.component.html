@@ -1,0 +1,31 @@
+<h2>
+    User Details:
+</h2>
+<p>Click back to view other user details.</p>
+<button class="back-btn" routerLink="/app">Back</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Avatar</th>
+        <th>Company</th>
+        <th>URL</th>
+        <th>Text</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.first_name }}</td>
+            <td>{{ data.last_name }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.avatar }}</td>
+            <td>{{ ad.company }}</td>
+            <td>{{ ad.url }}</td>
+            <td>{{ ad.text }}</td>
+          </tr>
+    </tbody>
+  </table>
